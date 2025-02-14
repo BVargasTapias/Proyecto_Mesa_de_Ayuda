@@ -1,5 +1,1 @@
-Flask:
-flask_sqlalchemy:
-flask_bcrypt:
-flask_jwt_extended:
-pymysql:
+pip install flask mysql-connector-python werkzeug
