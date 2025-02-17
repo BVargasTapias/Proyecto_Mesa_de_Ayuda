@@ -6,7 +6,8 @@ auth_bp = Blueprint("auth", __name__)
 
 
 @auth_bp.route("/login", methods=["POST"])
-def login():
+def Login():
+
     # Verificacion de credenciales
     data = request.get_json()
     user = data.get("usuario")
