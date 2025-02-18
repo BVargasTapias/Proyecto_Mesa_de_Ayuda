@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 import axios from 'axios';
-import Imagen from '../imagenes/logo empresarial.png'
+import Imagen from '../imagenes/logo proyecto color.jpeg'
+
 
 const Login = () => {
     const [usuario, setUser] = useState('');
     const [contraseña, setPassword] = useState('');
     const [message, setMessage] = useState('');
 
+    const [registrando,setRegistrando ] = useState(false)
+
+
     const handleSubmit = async (e) => {
-        e.preventDefault();
+        e.preventDefault(); // Evita que el formulario se envíe automáticamente
         try {
+             // Realiza una solicitud a la base de datos para verificar el dato
             const response = await axios.post("http://127.0.0.1:5000/auth/login", {
                 usuario,
                 contraseña
@@ -18,7 +23,7 @@ const Login = () => {
             setMessage(response.data.message);  // Esperando 'message' del backend
         } catch (error) {
             // Muestra el error específico recibido del backend
-            setMessage(error.response?.data.error || 'Error al iniciar sesión');
+            setMessage(error.response?.data.error || 'Usuario o Contraseña incorrecta');
         }
     };
 
@@ -41,11 +46,11 @@ const Login = () => {
                         <i className='bx bx-lock-open'></i>
                         <input type="password" placeholder="CONTRASEÑA" value={contraseña} name="contraseña" onChange={(e) => setPassword(e.target.value)} required />
                     </div>
-
-                    <button type="submit">Aceptar</button>
+                    <button type="submit">{registrando ? "Usuario o clave incorrecta" : "Aceptar"}</button>
                 </form>
-                {message && <p>{message}</p>}
+                {message && <p className="mensaje">{message}</p>}
             </div>
+       
         </div>
     )
 }

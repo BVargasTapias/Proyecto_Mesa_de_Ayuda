@@ -2,7 +2,7 @@
 
 body {
 
-    background-image: url("../public/imagenes/FONDO2.png");
+    background-image: url("../public/imagenes/fondo\ con\ logo.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -142,3 +142,13 @@ button:hover {
         font-size: 18px;
     }
 }
+
+.mensaje{
+    color: red;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  
+  
+  }
+

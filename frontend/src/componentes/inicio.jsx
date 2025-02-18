@@ -1,14 +1,24 @@
-import React from "react";
+/* eslint-disable no-unused-vars */
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
+const Inicio = ({ usuario, setUsuario }) => {
+    const navigate = useNavigate(); // Hook para redirigir
 
+    const handleSignOut = () => {
+        // Simula el cierre de sesión
+        setUsuario(null); // Elimina el usuario del estado
+        navigate("/login"); // Redirige a la página de inicio de sesión
+    };
 
-const inicio =({correoUsuario} ) => {
     return (
         <div>
-
-            <h1>Bienvenido  usuario   {correoUsuario} <button onClick={()=>signOut(auth)}>Cerrar Sesión</button></h1>
+            <h1>
+                Bienvenido, usuario {usuario}{" "}
+                <button onClick={handleSignOut}>Cerrar Sesión</button>
+            </h1>
         </div>
-    )
-}
+    );
+};
 
-export default inicio
+export default Inicio;

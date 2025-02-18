@@ -25,7 +25,9 @@ SET time_zone = "+00:00";
 
 --
 -- Estructura de tabla para la tabla `tickets`
---
+DROP DATABASE HELP_DESK_JCBD;
+
+CREATE DATABASE HELP_DESK_JCBD;
 
 CREATE TABLE `tickets` (
   `id_ticket` int(11) NOT NULL,
