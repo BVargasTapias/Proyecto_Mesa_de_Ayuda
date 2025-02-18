@@ -1,5 +1,6 @@
 import mysql.connector
-from config import DATABASE_CONFIG
+from config.config import DATABASE_CONFIG
+
 
 # Creacion de la canoexion
 
