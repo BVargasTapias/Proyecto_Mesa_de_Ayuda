@@ -93,6 +93,7 @@ header h1 {
     transform: translateY(-50%);
     color: #888;
     font-size: 18px;
+    
 }
 
 button {
@@ -144,7 +145,7 @@ button:hover {
 }
 
 .mensaje{
-    color: red;
+    color: rgb(226, 205, 205);
     justify-content: center;
     align-items: center;
     text-align: center;
